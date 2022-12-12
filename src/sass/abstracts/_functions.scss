@@ -1,0 +1,20 @@
+/* functions */
+
+// slightly lighten
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// slightly darken
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// auto detect background and set color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #333; // Light background
+  } @else {
+    @return #eee; // Dark background
+  }
+}
