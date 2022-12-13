@@ -2,7 +2,9 @@
 
 @use "./functions" as func;
 
-$bg-color: gold;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+$bg-color: #D3D3D3;
 $bg-very-light: func.tint($bg-color, 50%);
 $bg-light: func.tint($bg-color, 25%);
 $bg-medium: $bg-color;
@@ -10,9 +12,15 @@ $bg-dark: func.shade($bg-color, 25%);
 $bg-very-dark: func.shade($bg-color, 50%);
 
 
-$primary-color: rebeccapurple;
+$primary-color: #000;
 $primary-very-light: func.tint($primary-color, 50%);
 $primary-light: func.tint($primary-color, 25%);
 $primary-medium: $primary-color;
 $primary-dark: func.shade($primary-color, 25%);
 $primary-very-dark: func.shade($primary-color, 50%);
+
+
+/* Fonts */
+$accent-font: 'Poiret One', cursive;
+$general-header-font: 'Poiret One', cursive;
+$body-text-font: Nunito;
