@@ -25,18 +25,3 @@
   display: flex;
   justify-content: center;
 }
-
-@mixin inline {
-  font-size: 0.75rem;
-  font-family: sans-serif;
-  color: #666;
-}
-
-@mixin tab {
-  position: relative;
-  top: -1.5rem;
-  padding: 0.125rem;
-  outline: 1px solid gray;
-  background-color: #333;
-  color: #eee;
-}
