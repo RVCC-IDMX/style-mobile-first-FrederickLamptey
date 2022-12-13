@@ -1,0 +1,76 @@
+@use "../abstracts/mixins" as mixins;
+
+svg {
+  width: 0.75em;
+}
+
+.container,
+nav {
+  max-width: 80ch;
+  margin: 8vh auto;
+}
+
+/* Layout Study */
+
+body {
+  --name: "element";
+  display: grid;
+  gap: 2rem;
+  font: var(--display-font)
+}
+
+body > * {
+  position: relative;
+}
+
+body > *::before {
+  content: var(--name, "element");
+  @include tab;
+}
+
+/*  Boxes */
+
+body {
+  padding: 2rem;
+}
+
+body > a {
+  --name: "skip link";
+  background-color: azure;
+  outline: 1px solid black;
+}
+
+body > header {
+  --name: "header";
+  background-color: aliceblue;
+  outline: 1px solid black;
+}
+
+body > nav {
+  --name: "nav";
+  background-color: lightcyan;
+  outline: 1px solid black;
+}
+
+body > main {
+  --name: "main";
+  background-color: lightyellow;
+  outline: 1px solid black;
+}
+
+body > aside {
+  --name: "aside";
+  background-color: lightsteelblue;
+  outline: 1px solid black;
+}
+
+body > aside + aside {
+  background-color: lightskyblue;
+  outline: 1px solid black;
+}
+
+body > footer {
+  --name: "footer";
+  background-color: lavenderblush;
+  outline: 1px solid black;
+}

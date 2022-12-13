@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as mixins;
+
+h1::before {
+  content: "h1";
+  @include inline;
+}
+
+h2::before {
+  content: "h2";
+  @include inline;
+}
+
+h3::before {
+  content: "h3";
+  @include inline;
+}
+
+h4::before {
+  content: "h4";
+  @include inline;
+}

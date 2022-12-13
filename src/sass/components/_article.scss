@@ -1,0 +1,120 @@
+@use "../abstracts/mixins" as mixins;
+main > div.container {
+  display: grid;
+  gap: 3rem;
+}
+
+.container {
+  outline: 2px dashed purple;
+  outline-offset: 2px;
+}
+
+article {
+  --name: "article";
+  position: relative;
+  background-color: lightpink;
+  margin-block: 0.125rem;
+  padding-block: 0.125rem;
+}
+
+article::before {
+  content: var(--name, "element");
+  @include tab;
+  position: absolute;
+  transform: translate(15rem, -0.1rem);
+}
+
+section {
+  --name: "section";
+  position: relative;
+  background-color: lightcyan;
+  margin-block: 2rem;
+}
+
+section::before {
+  content: var(--name, "element");
+  @include tab;
+}
+
+article > footer > .container {
+  --name: "footer";
+  background-color: antiquewhite;
+}
+
+article > footer > .container::before {
+  content: var(--name, "element");
+  @include tab;
+}
+
+/* specific elements */
+
+.container > * {
+  outline: 1px dashed green;
+  outline-offset: -2px;
+}
+
+p::before {
+  content: "p";
+  @include inline;
+}
+
+span::before {
+  content: "<span>";
+  @include inline;
+}
+
+span::after {
+  content: "</span>";
+  @include inline;
+}
+
+/* aria-hidden */
+
+[aria-hidden]::before {
+  content: "<span aria-hidden>";
+  @include inline;
+}
+[aria-hidden]::after {
+  content: "</span aria-hidden>";
+  @include inline;
+}
+
+
+a {
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: crimson;
+}
+a::after {
+  content: "(link)";
+  @include inline;
+}
+
+/* highlight special inline elements */
+
+strong {
+  color: maroon;
+  font-family: sans-serif;
+}
+
+strong::before {
+  content: "(strong)";
+  @include inline;
+}
+
+blockquote {
+  color: midnightblue;
+  background: #f9f9f9;
+  margin: 1rem;
+  padding: 1rem;
+}
+blockquote::before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
